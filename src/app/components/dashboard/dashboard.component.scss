@@ -1,0 +1,26 @@
+:host ::ng-deep {
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 0.25rem 0.25rem;
+    }
+
+    .p-datatable .p-datatable-tbody > tr {
+        height: 3vw;
+    }
+
+    .p-datatable .p-datatable-thead > tr > th {
+        background-color: #4b5563;
+        color: #ffff;
+    }
+
+    .p-button.p-button-text {
+        background-color: transparent;
+        color: #4b5563;
+        border-color: transparent;
+      }
+
+      .p-button.p-button-text:not(:disabled):hover {
+        background: rgba(59, 130, 246, 0.04);
+        color: #4635a7;;
+        border-color: transparent;
+      }
+}

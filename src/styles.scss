@@ -1,0 +1,22 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+html {
+    font-size: 14px;
+}
+
+
+.borde {
+    border: 1px solid rgb(26 26 25);
+}
+
+.main-color {
+    background-color: rgb(74 142 204);
+    color: #fff;
+}
+
+.card {
+    background: var(--surface-card);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}

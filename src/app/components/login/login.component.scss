@@ -1,0 +1,44 @@
+:host ::ng-deep {
+    .p-button {
+        background-color: #4b5563;
+    }
+}
+
+.login-card {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 25vw;
+    height: 35vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    flex-flow: column;
+    overflow: hidden;
+    border: 1px solid #4b5563;
+}
+
+.logo {
+    width: 100%;
+    height: 15vh;
+    background: url(../../../assets/img/Logo-Eldar-Bl.34c06a7f.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4b5563;
+}
+
+.credentials {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}

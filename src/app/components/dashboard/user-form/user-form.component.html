@@ -1,0 +1,154 @@
+<app-header></app-header>
+<p-toast />
+
+<app-loader *ngIf="!ready"></app-loader>
+
+<main *ngIf="ready" class="form-body">
+    <div class="title-box">
+        <span *ngIf="updateForm" class="ml-3 mr-2">
+            <i class="pi pi-user-edit mr-2" style="font-size: 1.5rem"></i>
+            EDITING:
+            <span class="w600">{{userForm.get('username')?.value}}</span>
+        </span>
+        <span *ngIf="!updateForm" class="ml-3 mr-2 w300">
+            <i class="pi pi-user-plus mr-2" style="font-size: 1.5rem"></i>
+            CREATE USER
+        </span>
+    </div>
+    <div class="form-items" [formGroup]="userForm">
+        <div class="form-item-row ml-3 mt-3" *ngIf="!updateForm">
+            <div class="flex flex-column form-item-double gap-2">
+                <label for="username">Username</label>
+                <input 
+                    pInputText
+                    formControlName="username"
+                    [pTooltip]="userForm.get('username')?.invalid ? tooltipContent : undefined"
+                    severity="secondary" 
+                    tooltipPosition="bottom"
+                    id="username"/>
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center">
+                            <span>This field is required</span>
+                        </div>
+                    </ng-template>
+            </div>
+            <div class="flex flex-column form-item-double gap-2 ml-3">
+                    <label for="password">Password</label>
+                    <p-password formControlName="password" [toggleMask]="true">
+                        <ng-template pTemplate="footer">
+                            <p-divider />
+                            <p class="mt-2">Suggestions</p>
+                            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                                <li>At least one lowercase</li>
+                                <li>At least one uppercase</li>
+                                <li>At least one numeric</li>
+                                <li>Minimum 8 characters</li>
+                            </ul>
+                        </ng-template>
+                    </p-password>
+            </div>
+        </div>
+        <div class="form-item-row ml-3 mt-3">
+            <div class="flex flex-column form-item-double gap-2">
+                <label for="name">Name</label>
+                <input 
+                    pInputText
+                    formControlName="name"
+                    [pTooltip]="userForm.get('name')?.invalid ? tooltipContent : undefined"
+                    severity="secondary" 
+                    tooltipPosition="bottom"
+                    id="name"/>
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center">
+                            <span>This field is required</span>
+                        </div>
+                    </ng-template>
+            </div>
+            <div class="flex flex-column form-item-double ml-3 gap-2">
+                <label for="email">Email</label>
+                <input 
+                    pInputText
+                    formControlName="email"
+                    [pTooltip]="userForm.get('email')?.invalid ? tooltipContent : undefined"
+                    severity="secondary" 
+                    tooltipPosition="bottom"
+                    id="email"/>
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center">
+                            <span>This field is required</span>
+                        </div>
+                    </ng-template>
+            </div>
+        </div>
+        <div class="form-item-row ml-3 mt-3">
+            <div class="flex flex-column form-item-double gap-2">
+                <label for="address">Address</label>
+                <input 
+                    pInputText
+                    formControlName="address"
+                    id="address"
+                    [pTooltip]="userForm.get('address')?.invalid ? tooltipContent : undefined"
+                    severity="secondary" 
+                    tooltipPosition="bottom"
+                    id="address"/>
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center">
+                            <span>This field is required</span>
+                        </div>
+                    </ng-template>
+            </div>
+            <div class="flex flex-column form-item-double ml-3 gap-2">
+                <label for="phone">Phone</label>
+                <input 
+                    pInputText
+                    formControlName="phone"
+                    id="phone"
+                    [pTooltip]="userForm.get('phone')?.invalid ? tooltipContent : undefined"
+                    severity="secondary" 
+                    tooltipPosition="bottom"
+                    id="phone"/>
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center">
+                            <span>This field is required</span>
+                        </div>
+                    </ng-template>
+            </div>
+        </div>
+        <div class="form-item-row ml-3 mt-3">
+            <div class="flex flex-column form-item-double gap-2">
+                <label for="city">City</label>
+                <input 
+                    pInputText
+                    formControlName="city"
+                    id="city"/>
+            </div>
+            <div class="flex flex-column form-item-double ml-3 gap-2">
+                <label for="zipcode">Zip code</label>
+                <input 
+                    pInputText
+                    formControlName="zipcode"
+                    id="zipcode"/>
+            </div>
+        </div>
+        <div class="form-item-row ml-3 mt-3">
+            <div class="flex flex-column form-item-double gap-2">
+                <label for="company">Company</label>
+                <input 
+                    pInputText
+                    formControlName="company"
+                    id="company"/>
+            </div>
+            <div class="flex flex-column form-item-double ml-3 gap-2">
+                <label for="website">Website</label>
+                <input 
+                    pInputText
+                    formControlName="website"
+                    id="website"/>
+            </div>
+        </div>
+    </div>
+    <div class="action-buttons">
+        <p-button label="Cancel" [outlined]="true" severity="danger" (onClick)="goToUserList()"/>
+        <p-button class="ng-invalid ng-dirty ml-3 mr-3" label="Save" severity="success" [disabled]="userForm.invalid" (onClick)="saveUser()"/>
+    </div>
+</main>

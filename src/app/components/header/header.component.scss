@@ -1,0 +1,19 @@
+:host ::ng-deep {
+    .p-button.p-button-outlined {
+        background-color: #4b5563;
+        color: #ffff
+    }
+}
+
+.logo {
+    background-image: url('./../../../assets/img/Logo-Eldar-Bl.34c06a7f.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 50px;
+}
+
+.logout-btn {
+    margin-left: -70px;
+    margin-top: -55px;
+}
